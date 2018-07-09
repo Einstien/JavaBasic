@@ -3,29 +3,37 @@ package july6;
 public class primeNumber {
 
 	public static void main(String[] args) {
-	
-		int m = 0, n = 20;
 		
-		while (m<n) {
-			boolean flag = false;
+		
+		
+		for (int i=0; i<=100; i++ ) {
 			
-			for(int i = 2; i <= m/2; ++i) {
-				
-				if(m % i == 0) {
-                    flag = true;
-                    break;
-                }
-			
+			if (checkPrime(i)) {
+				System.out.print(i + " ");
 			}
 			
-			if (!flag)
-                System.out.print(m + " ");
-
-            ++m;
-			
-		}
-			
 		}
 		
+		
 	}
+	
+	public static boolean checkPrime(int value) {		
+		int n = value;		
+		boolean isPrime = true;		
+		if (n==0 || n==1) {
+			return false;
+		}		
+		for (int i=2; i<=n/2; i++) {			
+			if (n%i==0) {				
+				isPrime = false;
+				break;				
+			}			
+		}		
+		if (isPrime) {
+			return true;
+		} else {
+			return false;
+		}		
+	}
+}
 
